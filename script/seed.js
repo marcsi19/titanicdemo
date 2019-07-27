@@ -1,18 +1,18 @@
 'use strict'
 
-const db = require('../server/db')
-const {User} = require('../server/db/models')
+// const db = require('../server/db')
+const {db, Titanic} = require('../server/db/models')
+const modeldata = require('./csv/train.js')
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
+  const titanic = await Promise.all([
+    await Promise.all(modeldata.map(train => Titanic.create(train)))
   ])
 
-  console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${titanic.length} users`)
   console.log(`seeded successfully`)
 }
 
