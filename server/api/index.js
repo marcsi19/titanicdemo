@@ -1,7 +1,7 @@
 const router = require('express').Router()
 module.exports = router
 
-router.use('/users', require('./titanic'))
+router.use('/', require('./titanic'))
 
 router.use((req, res, next) => {
   const error = new Error('Not Found')

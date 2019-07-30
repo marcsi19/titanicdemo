@@ -3,13 +3,19 @@
 // const db = require('../server/db')
 const {db, Titanic} = require('../server/db/models')
 const modeldata = require('./csv/train.js')
+const trains1 = require('./csv/trainfile.json')
+// const trains = require('./csv/trains.json')
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
+  // const titanic = await Promise.all([
+  //   await Promise.all(modeldata.map(train => Titanic.create(train)))
+  // ])
+
   const titanic = await Promise.all([
-    await Promise.all(modeldata.map(train => Titanic.create(train)))
+    await Promise.all(trains1.map(train => Titanic.create(train)))
   ])
 
   console.log(`seeded ${titanic.length} users`)

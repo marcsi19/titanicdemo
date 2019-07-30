@@ -4,13 +4,29 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const users = await Titanic.findAll({
-      // explicitly select only the id and email fields - even though
-      // users' passwords are encrypted, it won't help if we just
-      // send everything to anyone who asks!
+    const data = await Titanic.findAll()
+    res.json(data)
+  } catch (err) {
+    next(err)
+  }
+})
+router.get('/gender', async (req, res, next) => {
+  try {
+    const gender = await Titanic.findAll({
+      attributes: ['id', 'Sex']
+    })
+    res.json(gender)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/class', async (req, res, next) => {
+  try {
+    const age = await Titanic.findAll({
       attributes: ['id', 'Pclass']
     })
-    res.json(users)
+    res.json(age)
   } catch (err) {
     next(err)
   }
