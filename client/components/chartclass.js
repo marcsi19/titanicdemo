@@ -81,8 +81,8 @@ const ChartClass = props => {
       }
     ]
   }
-  const chartAxisName = []
-  options.series.map(elem => chartAxisName.push(elem.name))
+  // const chartAxisName = []
+  // options.series.map(elem => chartAxisName.push(elem.name))
 
   return (
     <div>
