@@ -6,7 +6,6 @@ import HighchartsReact from 'highcharts-react-official'
 
 const ChartClass = props => {
   const selectData = props.selectData
-  const allData = props.allData
 
   // const ChartClass = props => {
   const {pclass} = props || []
@@ -35,8 +34,8 @@ const ChartClass = props => {
   const options = {
     chart: {
       type: 'column',
-      width: 600,
-      height: 300
+      width: 450,
+      height: 250
     },
     xAxis: {categories: ['Class']},
     yAxis: {categories: ['Passengers']},
@@ -87,8 +86,7 @@ const ChartClass = props => {
 
   return (
     <div>
-      <div>Charts</div>
-      <div>
+      <div className="high">
         <HighchartsReact
           highcharts={Highcharts}
           options={options}

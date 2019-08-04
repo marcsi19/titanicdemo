@@ -1,10 +1,16 @@
 let csvToJson = require('convert-csv-to-json')
 
-let fileInputName = 'train.csv'
-let fileOutputName = 'trains.json'
+let fileInputName = '../script/cvs/train.csv'
+let fileOutputName = '../script/cvs/trains.json'
 
 async function convertFileToJson() {
-  await csvToJson.generateJsonFileFromCsv(fileInputName, fileOutputName)
+  try {
+    await csvToJson.fieldDelimiter(',').getJsonFromCsv(fileInputName)
+    await csvToJson.formatValueByType().getJsonFromCsv(fileInputName)
+    await csvToJson.generateJsonFileFromCsv(fileInputName, fileOutputName)
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 convertFileToJson()

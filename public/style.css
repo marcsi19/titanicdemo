@@ -2,20 +2,47 @@ body {
   font-family: sans-serif;
 }
 
-a {
+h1 {
+  text-align: center;
+  margin: 2em, 1em;
+  color: rgb(23, 23, 73);
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.piec {
+  margin: 1em;
+}
+
+.high {
+  margin: 1em;
+}
+
+.button {
+  text-align: center;
+  margin: 2em;
+}
+
+.button button {
+  font-size: 24px;
   text-decoration: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-shadow: slategray;
 }
 
-label {
-  display: block;
+.button button:hover {
+  background-color: gray;
+  color: white;
 }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
+@media only screen and (max-width: 950px) {
+  .piec {
+    flex: 1 0 100%;
+  }
 }

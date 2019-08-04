@@ -5,7 +5,7 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
 const ChartGen = props => {
-  const {genders, allData, selectData} = props || []
+  const {genders, selectData} = props || []
   const females = genders.filter(female => {
     if (female.Sex === 'female') {
       return true
@@ -24,8 +24,8 @@ const ChartGen = props => {
   const options = {
     chart: {
       type: 'pie',
-      width: 600,
-      height: 300
+      width: 450,
+      height: 250
     },
     // xAxis: {
     categories: ['Male', 'Female'],
@@ -72,8 +72,7 @@ const ChartGen = props => {
 
   return (
     <div>
-      <div>Charts</div>
-      <div>
+      <div className="piec">
         <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
     </div>

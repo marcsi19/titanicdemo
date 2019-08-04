@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import ChartGen from './chartgen'
 import ChartClass from './chartclass'
+import TableData from './table'
 
 export class Main extends Component {
   constructor() {
@@ -86,16 +87,23 @@ export class Main extends Component {
     }
   }
   render() {
-    const {gender, pclass, allData} = this.state
+    const {gender, pclass, allData, selectedData} = this.state
     const selectData = this.selectData
-    console.log('state log', this.state)
+
     return (
       <div>
-        <ChartGen genders={gender} selectData={selectData} allData={allData} />
-        <ChartClass pclass={pclass} selectData={selectData} allData={allData} />
-        <button type="reset" onClick={this.resetData}>
-          Reset
-        </button>
+        <h1>Titanic Statistics</h1>
+        <div className="main">
+          <ChartGen genders={gender} selectData={selectData} />
+          <ChartClass pclass={pclass} selectData={selectData} />
+        </div>
+        <div className="button">
+          <button type="reset" onClick={this.resetData}>
+            {' '}
+            Reset Charts
+          </button>
+        </div>
+        <TableData dataToDisplay={selectData} />
       </div>
     )
   }
