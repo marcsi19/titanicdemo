@@ -1,5 +1,5 @@
 const isDev = process.env.NODE_ENV === 'development'
-var path = require('path')
+
 module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: [

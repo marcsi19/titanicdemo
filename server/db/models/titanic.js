@@ -12,7 +12,10 @@ const Titanic = db.define(
       type: Sequelize.INTEGER
     },
     Pclass: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
+      validate: {
+        isIn: [[1, 2, 3]]
+      }
     },
     Name: {
       type: Sequelize.STRING,

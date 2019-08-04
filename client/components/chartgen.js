@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-// import PieChart from './piechart'
+import React from 'react'
 
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
@@ -24,12 +23,13 @@ const ChartGen = props => {
   const options = {
     chart: {
       type: 'pie',
+
       width: 450,
       height: 250
     },
-    // xAxis: {
+
     categories: ['Male', 'Female'],
-    // },
+
     title: {
       text: 'Passengers by Genders'
     },
@@ -57,12 +57,12 @@ const ChartGen = props => {
         data: [
           {
             name: 'Female',
-            color: '#F5C6C6',
+            color: '#B63596',
             y: females.length
           },
           {
             name: 'Male',
-            color: '#A9D9EB',
+            color: '#355EB6',
             y: males.length
           }
         ]

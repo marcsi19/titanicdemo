@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import PieChart from './piechart'
 
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
@@ -7,7 +6,6 @@ import HighchartsReact from 'highcharts-react-official'
 const ChartClass = props => {
   const selectData = props.selectData
 
-  // const ChartClass = props => {
   const {pclass} = props || []
   const first = pclass.filter(elem => {
     if (elem.Pclass === 1) {
@@ -39,9 +37,7 @@ const ChartClass = props => {
     },
     xAxis: {categories: ['Class']},
     yAxis: {categories: ['Passengers']},
-    // xAxis: {
-    //   categories: ['First Class', 'Second Class', 'Third Class']
-    // },
+
     title: {
       text: 'Passengers by Classes'
     },
@@ -69,29 +65,26 @@ const ChartClass = props => {
     series: [
       {
         name: 'First Class',
-        data: [first.length]
+        data: [first.length],
+        color: '#CA2727'
       },
       {
         name: 'Second Class',
-        data: [second.length]
+        data: [second.length],
+        color: '#52B8A0'
       },
       {
         name: 'Third Class',
-        data: [third.length]
+        data: [third.length],
+        color: '#3B9668'
       }
     ]
   }
-  // const chartAxisName = []
-  // options.series.map(elem => chartAxisName.push(elem.name))
 
   return (
     <div>
       <div className="high">
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={options}
-          // constructorType="chart"
-        />
+        <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
     </div>
   )
