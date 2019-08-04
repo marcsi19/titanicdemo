@@ -1,11 +1,11 @@
 'use strict'
 
 const {db, Titanic} = require('../server/db/models')
-// STEP1: if you don't do npm run convertfile uncomment the line below:
-// const trains1 = require('./csv/trainfile.json')
+// STEP1: if you do npm run convertfile comment out the line below:
+const trains1 = require('./csv/trainfile.json')
 
-// STEP2: if you don't do npm run convertfile comment out the line below:
-const trains1 = require('./csv/trains.json')
+// STEP2: if you do npm run convertfile uncomment the line below:
+// const trains1 = require('./csv/trains.json')
 
 async function seed() {
   await db.sync({force: true})
