@@ -103,7 +103,7 @@ export class Main extends Component {
             Reset Charts
           </button>
         </div>
-        <TableData dataToDisplay={selectData} />
+        <TableData dataToDisplay={selectedData} />
       </div>
     )
   }
