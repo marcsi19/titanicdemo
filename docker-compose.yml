@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: titanic
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432-5432'
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run start-dev'
+  web:
+    image: titanic
+    depends_on:
+      - db
+    ports:
+      - '8080:8080'

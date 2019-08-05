@@ -143,7 +143,7 @@ export class Main extends Component {
   }
 
   render() {
-    const {gender, pclass, allData, selectedData} = this.state
+    const {gender, pclass, selectedData} = this.state
     const selectData = this.selectData
     const rowGetter = rowNumber => this.state.rows[rowNumber]
     return (
@@ -169,7 +169,7 @@ export class Main extends Component {
             enableCellSelect={true}
           />
         </div>
-        {/* <TableData dataToDisplay={selectedData} /> */}
+        {/* <TableData rows={rows} onGridRowsUpdated={onGridRowsUpdated} /> */}
       </div>
     )
   }

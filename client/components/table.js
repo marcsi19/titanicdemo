@@ -3,21 +3,23 @@
 
 // const TableData = props => {
 //   const columns = [
-//     {key: 'id', name: 'Id'},
-//     // {key: 'PassengerId', name: 'PId'},
-//     {key: 'Survived', name: 'Survived'},
-//     {key: 'Pclass', name: 'Class'},
-//     {key: 'Name', name: 'Name'},
-//     {key: 'Sex', name: 'Sex'},
-//     {key: 'Age', name: 'Age'},
-//     {key: 'SibSp', name: 'SibSp'},
-//     {key: 'Parch', name: 'Parch'},
-//     {key: 'Ticket', name: 'Ticket'},
-//     {key: 'Fare', name: 'Fare'},
-//     {key: 'Cabin', name: 'Cabin'},
-//     {key: 'Embarked', name: 'Embarked'}
+//     // {key: 'id', name: 'Id'},
+//     {key: 'PassengerId', name: 'PId', editable: true},
+//     {key: 'Survived', name: 'Survived', editable: true},
+//     {key: 'Pclass', name: 'Class', editable: true},
+//     {key: 'Name', name: 'Name', editable: true},
+//     {key: 'Sex', name: 'Sex', editable: true},
+//     {key: 'Age', name: 'Age', editable: true},
+//     {key: 'SibSp', name: 'SibSp', editable: true},
+//     {key: 'Parch', name: 'Parch', editable: true},
+//     {key: 'Ticket', name: 'Ticket', editable: true},
+//     {key: 'Fare', name: 'Fare', editable: true},
+//     {key: 'Cabin', name: 'Cabin', editable: true},
+//     {key: 'Embarked', name: 'Embarked', editable: true}
 //   ]
-//   let rows = props.dataToDisplay
+//   let rows = props.rows
+//   let onGridRowsUpdated = props.onGridRowsUpdated
+//   console.log('thseorwo', rows)
 //   const rowGetter = rowNumber => rows[rowNumber]
 //   return (
 //     <div className="table">
@@ -26,6 +28,8 @@
 //         rowGetter={i => rows[i]}
 //         rowsCount={rows.length}
 //         minHeight={500}
+//         onGridRowsUpdated={onGridRowsUpdated}
+//         enableCellSelect={true}
 //       />
 //     </div>
 //   )

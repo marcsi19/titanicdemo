@@ -51,3 +51,14 @@ return jsonResult
 * `npm run seed`
 * `npm run start-dev`
 * `npm run test`
+
+Docker:
+
+docker-compose.yml:
+change:
+POSTGRES_USER: mypostgres
+POSTGRES_PASSWORD: mypassword
+
+* `docker build -t titanic .`
+* `docker-compose pull`
+* `docker-compose up -d`

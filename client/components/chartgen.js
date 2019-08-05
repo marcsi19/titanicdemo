@@ -23,7 +23,6 @@ const ChartGen = props => {
   const options = {
     chart: {
       type: 'pie',
-
       width: 450,
       height: 250
     },
