@@ -40,7 +40,7 @@ export class Main extends Component {
       const filterDataArray = []
       const chartArrayGender = []
       const chartArrayClass = []
-      this.state.allData.map(elem => {
+      this.state.selectedData.map(elem => {
         let id = elem.id
         if (selection.includes(id)) {
           filterDataArray.push(elem)
